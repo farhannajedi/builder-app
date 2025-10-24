@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('templates', function (Blueprint $table) {
             $table->id();
-            // harusnya ada relasi ke opd id
+            // harusnya ada relasi ke opd id, apakah harus ditambahkan
             $table->string('name');
             $table->string('slug')->nullable(); // folder view template
             $table->timestamps();
