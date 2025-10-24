@@ -29,6 +29,7 @@ use App\Filament\Resources\OpdConfigResource;
 use App\Filament\Resources\OpdResource;
 use App\Filament\Resources\TemplateResource;
 use App\Filament\Resources\UserResource;
+use Filament\Navigation\NavigationItem;
 
 class AdminPanelProvider extends PanelProvider
 {
@@ -72,6 +73,13 @@ class AdminPanelProvider extends PanelProvider
             ])
             ->navigation(function (NavigationBuilder $builder): NavigationBuilder {
                 return $builder->groups([
+                    NavigationGroup::make()
+                        ->items([
+                            NavigationItem::make('Dashboard')
+                                ->icon('heroicon-o-home')
+                                ->isActiveWhen(fn(): bool => request()->routeIs('filament.admin.pages.dashboard'))
+                                ->url(fn(): string => Dashboard::getUrl()),
+                        ]),
                     NavigationGroup::make('Konvigurasi OPD')
                         ->items([
                             ...OpdConfigResource::getNavigationItems(),
@@ -86,6 +94,27 @@ class AdminPanelProvider extends PanelProvider
                         ->items([
                             ...NewsCategoryResource::getNavigationItems(),
                             ...NewsResource::getNavigationItems(),
+                        ]),
+                    NavigationGroup::make('Setting')
+                        ->items([
+                            NavigationItem::make('Roles')
+                                ->icon('heroicon-o-user-group')
+                                ->isActiveWhen(fn(): bool => request()->routeIs([
+                                    'filament.admin.resources.roles.index',
+                                    'filament.admin.resources.roles.create',
+                                    'filament.admin.resources.roles.view',
+                                    'filament.admin.resources.roles.edit',
+                                ]))
+                                ->url(fn(): string => '/admin/roles'),
+                            NavigationItem::make('Permission')
+                                ->icon('heroicon-o-lock-closed')
+                                ->isActiveWhen(fn(): bool => request()->routeIs([
+                                    'filament.admin.resources.permissions.index',
+                                    'filament.admin.resources.permissions.create',
+                                    'filament.admin.resources.permissions.view',
+                                    'filament.admin.resources.permissions.edit',
+                                ]))
+                                ->url(fn(): string => '/admin/permissions'),
                         ]),
                 ]);
             });

@@ -37,10 +37,6 @@ class TemplateResource extends Resource
                     ->required()
                     ->unique(ignoreRecord: true)
                     ->helperText('Nama template folder'),
-                Forms\Components\Textarea::make('description')
-                    ->label('Deskripsi Template')
-                    ->rows(3)
-                    ->nullable(),
             ]);
     }
 
@@ -56,8 +52,6 @@ class TemplateResource extends Resource
                     ->label('Folder / Slug')
                     ->sortable()
                     ->searchable(),
-                Tables\Columns\TextColumn::make('description')
-                    ->label('Deskripsi'),
                 Tables\Columns\TextColumn::make('created_at')
                     ->label('Dibuat')
                     ->dateTime('d M Y'),

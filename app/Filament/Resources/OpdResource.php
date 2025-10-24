@@ -53,12 +53,12 @@ class OpdResource extends Resource
                     ->options(Templates::all()->pluck('name', 'id'))
                     ->searchable()
                     ->required(),
-                Forms\Components\Select::make('user_id')
-                    ->label('Admin Opd')
-                    ->options(User::where('roles', 'admin_opd')->pluck('name', 'id'))
-                    ->searchable()
-                    ->nullable()
-                    ->helperText('Pilih Admin OPD Yang Bertanggung Jawab Untuk Website Ini'),
+                // Forms\Components\Select::make('user_id')
+                //     ->label('Admin Opd')
+                //     ->options(User::where('roles', 'admin_opd')->pluck('name', 'id'))
+                //     ->searchable()
+                //     ->nullable()
+                //     ->helperText('Pilih Admin OPD Yang Bertanggung Jawab Untuk Website Ini'),
             ]);
     }
 
