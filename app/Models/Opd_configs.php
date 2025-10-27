@@ -20,6 +20,7 @@ class Opd_configs extends Model
     ];
 
     protected $casts = [
+        'homepage_layout' => 'array',
         'extra_setting' => 'array',
     ];
 
