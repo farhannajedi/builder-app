@@ -5,26 +5,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <title>Website Builder App</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
 <body class="min-h-screen flex flex-col">
     <main class="bg-white flex-1">
+        @include('layouts.navigation')
         @include('layouts.alamat')
     </main>
-    <footer class="w-full bg-slate-900 text-slate-300 pt-14 pb-10 relative overflow-hidden">
+    <footer class="w-full bg-yellow-600 text-yellow-50 pt-9 pb-5 relative overflow-hidden">
 
         {{-- BIG BACKGROUND TEXT --}}
         <p class="pointer-events-none select-none absolute -left-4 top-2
         text-[170px] font-black tracking-widest leading-none
-        bg-gradient-to-t from-slate-900 via-slate-800 to-slate-800 bg-clip-text text-transparent opacity-40">
-            BUMI
+        bg-gradient-to-t from-yellow-200 via-yellow-800 to-yellow-800 bg-clip-text text-transparent opacity-40">
+
         </p>
         <p class="pointer-events-none select-none absolute -right-4 bottom-5
         text-[150px] font-black tracking-widest leading-none
-        bg-gradient-to-b from-slate-900 via-slate-800 to-slate-800 bg-clip-text text-transparent opacity-40">
-            BERAZAM
+        bg-gradient-to-b from-yellow-200 via-yellow-800 to-yellow-800 bg-clip-text text-transparent opacity-40">
+
         </p>
 
         <div class="max-w-screen-lg mx-auto px-4 relative z-10">
@@ -34,12 +36,12 @@
                 <div>
                     <img src="{{ asset('assets/images/logo_kab.png') }}" class="w-28 mb-3 drop-shadow-xl" alt="">
                     <p class="text-xl font-semibold text-white drop-shadow">Kabupaten Karimun</p>
-                    <p class="text-sm text-slate-300 drop-shadow">Diskominfo</p>
+                    <p class="text-sm text-white-200 drop-shadow">Diskominfo</p>
                 </div>
 
                 {{-- Kontak --}}
                 <div class="text-sm space-y-1">
-                    <p class="text-slate-400 mb-1 font-medium">Kontak</p>
+                    <p class="text-yellow-200 mb-1 font-medium">Kontak</p>
                     <p>Jl. Jendral Sudirman No. ...</p>
                     <p>Email: diskominfo@karimun.go.id</p>
                     <p>Telp: (0777) xxxx</p>
@@ -47,11 +49,24 @@
 
                 {{-- Sosial Media --}}
                 <div class="text-sm space-y-1">
-                    <p class="text-slate-400 mb-1 font-medium">Media Sosial</p>
+                    <p class="text-yellow-200 mb-1 font-medium">Media Sosial</p>
                     <div class="flex gap-4">
-                        <a href="#" class="hover:text-white transition">Facebook</a>
-                        <a href="#" class="hover:text-white transition">Instagram</a>
-                        <a href="#" class="hover:text-white transition">YouTube</a>
+                        <a href="#" target="_blank"
+                            class="p-2 border-2 border-yellow-400 hover:bg-yellow-800 hover:text-white duration-200 rounded-lg">
+                            <x-icons.facebook class="w-5 h-5" />
+                        </a>
+                        <a href="#" target="_blank"
+                            class="p-2 border-2 border-yellow-400 hover:bg-yellow-800 hover:text-white duration-200 rounded-lg">
+                            <x-icons.instagram class="w-5 h-5" />
+                        </a>
+                        <a href="#" target="_blank"
+                            class="p-2 border-2 border-yellow-400 hover:bg-yellow-800 hover:text-white duration-200 rounded-lg">
+                            <x-icons.tiktok class="w-5 h-5" />
+                        </a>
+                        <a href="#" target="_blank"
+                            class="p-2 border-2 border-yellow-400 hover:bg-yellow-800 hover:text-white duration-200 rounded-lg">
+                            <x-icons.youtube class="w-5 h-5" />
+                        </a>
                     </div>
                 </div>
             </div>
@@ -59,8 +74,8 @@
     </footer>
 
     {{-- COPYRIGHT BAR --}}
-    <div class="w-full bg-slate-800 py-1">
-        <p class="text-sm text-center font-medium text-slate-100">Copyright &copy; 2025</p>
+    <div class="w-full bg-yellow-600 shadow py-1">
+        <p class="text-sm text-center font-medium text-yellow-800">Copyright &copy; 2025</p>
     </div>
 
 </body>

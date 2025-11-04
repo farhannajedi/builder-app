@@ -1,9 +1,5 @@
 <section class="w-full bg-slate-100 py-20">
   <div class="max-w-screen-lg mx-auto grid gap-2 px-2">
-    <div class="pb-8">
-      <p class="text-5xl font-medium text-slate-700">Lokasi</p>
-    </div>
-
     {{-- Kontak, sosmed, survei --}}
     <!-- {{--<div class="grid grid-cols-3 gap-2">
             
@@ -76,7 +72,7 @@
       </div>
       <div class="w-full md:w-1/2 h-96 md:h-auto">
         <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d490697.263595916!2d103.30220041051754!3d0.8210764104654463!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31d9dea304b7f557%3A0x3039d80b220cab0!2sKarimun%20Regency%2C%20Riau%20Islands!5e1!3m2!1sen!2sid!4v1750295890338!5m2!1sen!2sid"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d24682.969462740155!2d103.3732096!3d1.0354687999999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31d7500cf4002579%3A0x4b4d1a15c7b7f7e8!2sKODIM%200317%20KAB.KARIMUN!5e1!3m2!1sid!2sid!4v1761700854034!5m2!1sid!2sid"
           width="100%" height="100%" class="rounded-b-xl md:rounded-b-none rounded-r-none md:rounded-r-xl "
           style="border:0;" allowfullscreen="" loading="lazy"
           referrerpolicy="no-referrer-when-downgrade"></iframe>
