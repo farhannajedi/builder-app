@@ -14,7 +14,7 @@ class Templates extends Model
         'slug',
     ];
 
-    public function Opd()
+    public function opd()
     {
         return $this->hasMany(Opd::class);
     }

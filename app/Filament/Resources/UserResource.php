@@ -83,8 +83,7 @@ class UserResource extends Resource
                         'success' => 'Admin Opd',
                     ]),
                 Tables\Columns\TextColumn::make('opd.name')
-                    ->label('OPD')
-                    ->placeholder('- Super Admin -'),
+                    ->label('OPD'),
                 Tables\Columns\TextColumn::make('created_at')
                     ->label('Dibuat')
                     ->dateTime('d M Y'),

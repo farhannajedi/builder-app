@@ -42,6 +42,8 @@ class OpdResource extends Resource
                     ->helperText('Slug untuk subdomain (Contoh: diskominfo)'),
                 Forms\Components\TextInput::make('address')
                     ->label('Alamat'),
+                Forms\Components\Select::make('user_id')
+                    ->label('Admin OPD'),
                 Forms\Components\TextInput::make('phone')
                     ->label('Telepon')
                     ->tel(),
@@ -74,8 +76,7 @@ class OpdResource extends Resource
                     ->label('Slug/Subdomain')
                     ->sortable(),
                 Tables\Columns\TextColumn::make('user.name')
-                    ->label('Admin OPD')
-                    ->placeholder('- belum ditetapkan -'),
+                    ->label('Admin OPD'),
                 Tables\Columns\TextColumn::make('template.name')
                     ->label('Template')
                     ->placeholder('-'),

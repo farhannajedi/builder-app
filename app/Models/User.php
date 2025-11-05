@@ -25,9 +25,14 @@ class User extends Authenticatable
         'password',
     ];
 
-    public function Opd()
+    public function opd()
     {
         return $this->belongsTo(Opd::class);
+    }
+
+    public function news()
+    {
+        return $this->hasMany(News::class);
     }
 
     // untuk pengecekan role
