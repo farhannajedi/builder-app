@@ -88,13 +88,13 @@ class UserResource extends Resource
                     ->label('Dibuat')
                     ->dateTime('d M Y'),
             ])
-            ->filters([
-                Tables\Filters\SelectFilter::make('roles')
-                    ->options([
-                        'super_admin' => 'Super Admin',
-                        'admin_opd' => 'Admin Opd',
-                    ])
-            ])
+            // ->filters([
+            //     Tables\Filters\SelectFilter::make('roles')
+            //         ->options([
+            //             'super_admin' => 'Super Admin',
+            //             'admin_opd' => 'Admin Opd',
+            //         ])
+            // ])
             ->actions([
                 Tables\Actions\EditAction::make(),
                 Tables\Actions\DeleteAction::make(),

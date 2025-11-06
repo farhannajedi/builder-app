@@ -33,7 +33,7 @@ class NewsResource extends Resource
                     ->options(Opd::all()->pluck('name', 'id'))
                     ->required()
                     ->searchable(),
-                Forms\Components\Select::make('news_category_id')
+                Forms\Components\Select::make('category_id')
                     ->label('Kategori Berita')
                     ->options(News_category::all()->pluck('title', 'id'))
                     ->required()
@@ -51,6 +51,12 @@ class NewsResource extends Resource
                     ->disabled()
                     ->dehydrated(),
                 Forms\Components\RichEditor::make('content')
+                    ->label('deskripsi'),
+                Forms\Components\FileUpload::make('images')
+                    ->label('Gambar Berita')
+                    ->image()
+                    ->multiple()
+                    ->directory('news-images'),
             ]);
     }
 
@@ -58,7 +64,19 @@ class NewsResource extends Resource
     {
         return $table
             ->columns([
-                //
+                Tables\Columns\ImageColumn::make('images')
+                    ->label('Gambar Berita'),
+                Tables\Columns\TextColumn::make('opd.id')
+                    ->label('OPD')
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('category.title')
+                    ->label('Kategori Berita'),
+                Tables\Columns\TextColumn::make('title')
+                    ->label('Judul Berita'),
+                Tables\Columns\TextColumn::make('slug')
+                    ->label('slug'),
+                Tables\Columns\TextColumn::make('content')
+                    ->label('Deskripsi'),
             ])
             ->filters([
                 //
